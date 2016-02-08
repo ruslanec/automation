@@ -1,0 +1,3 @@
+hg init
+hg add ...
+hg commit -m "Initial commit"
