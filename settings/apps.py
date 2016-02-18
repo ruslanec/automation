@@ -10,7 +10,10 @@ INSTALLED_APPS += [
 ]
 
 INSTALLED_APPS += [
-    'app_api',
+    # 'app_api',
     'app_messages',
+    'account',
 ]
+
+
 
