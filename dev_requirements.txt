@@ -1,0 +1,4 @@
+pip install coverage
+pip install webtest
+pip install django-webtest
+pip install django-coverage

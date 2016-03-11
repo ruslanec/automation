@@ -1,5 +1,7 @@
 *.pyc
 .*
 migrations
+reports
+static
 db.sqlite3
 *_initial.py
