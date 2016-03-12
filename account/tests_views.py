@@ -29,4 +29,4 @@ class AccountViewSetTests(APITestCase):
         response = self.client.get(reverse('account-list'))
         self.assertEqual(response.status_code, 200)
         # self.assertContains(response.data[0], 'id')
-        # self.assertEqual(response.data, [])
+        self.assertEqual(0, 1)
