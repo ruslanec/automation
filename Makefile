@@ -22,12 +22,15 @@ clean: clean_venv
 clean_venv:
 	rm -rf $(VENV_DIR)
 
+jenkins: migrate run_jenkins
+
+run_jenkins:
+	$(PYTHON) $(PROJECT_DIR)/manage.py jenkins
+
 migrate:
-	$(PYTHON) $(PROJECT_DIR)/manage.py makemigrations
-	$(PYTHON) $(PROJECT_DIR)/manage.py migrate	
+        $(PYTHON) $(PROJECT_DIR)/manage.py makemigrations
+        $(PYTHON) $(PROJECT_DIR)/manage.py migrate
 
 test:
-	$(PYTHON) $(PROJECT_DIR)/manage.py test
+        $(PYTHON) $(PROJECT_DIR)/manage.py test
 
-jenkins:
-	$(PYTHON) $(PROJECT_DIR)/manage.py jenkins
