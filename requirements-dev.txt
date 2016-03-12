@@ -1,0 +1,12 @@
+coverage
+webtest
+django-webtest
+django-coverage
+django-filter
+django-jenkins
+django-webtest
+gunicorn
+pep8
+pyflakes
+pylint
+python-jenkins

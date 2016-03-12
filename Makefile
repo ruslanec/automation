@@ -3,17 +3,15 @@ VENV_DIR=$(PROJECT_DIR)/env
 PIP=$(VENV_DIR)/bin/pip
 PYTHON=$(VENV_DIR)/bin/python
 
-all: virtualenv distribute pip
+all: virtualenv pip
 
 virtualenv:
-	virtualenv $(VENV_DIR)
-
-distribute:
-	$(PIP) install distribute
+	virtualenv -p python3 $(VENV_DIR)
 
 pip: requirements requirements-dev
 
 requirements:
+	$(PIP) install --upgrade pip
 	$(PIP) install -r $(PROJECT_DIR)/requirements.txt
 
 requirements-dev:
@@ -24,5 +22,12 @@ clean: clean_venv
 clean_venv:
 	rm -rf $(VENV_DIR)
 
+migrate:
+	$(PYTHON) $(PROJECT_DIR)/manage.py makemigrations
+	$(PYTHON) $(PROJECT_DIR)/manage.py migrate	
+
 test:
 	$(PYTHON) $(PROJECT_DIR)/manage.py test
+
+jenkins:
+	$(PYTHON) $(PROJECT_DIR)/manage.py jenkins
