@@ -1,7 +1,7 @@
 *.pyc
-.*
 migrations
 reports
 static
+media
 db.sqlite3
-*_initial.py
+

@@ -34,3 +34,6 @@ run_jenkins:
 test:
 	$(PYTHON) $(PROJECT_DIR)/manage.py test
 
+install:
+	mkvirtualenv automation --python=/usr/bin/python3
+	pip install -r requrements.txt
